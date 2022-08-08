@@ -11,7 +11,7 @@ RSpec.describe Vendor do
   end
   describe 'Vendor instantiation' do
     it 'exists' do
-      expect(@item1).to be_an_instance_of(Item)
+      expect(@vendor).to be_an_instance_of(Vendor)
     end
     it 'has a name' do
       expect(@vendor.name).to eq('Rocky Mountain Fresh')
