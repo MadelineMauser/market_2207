@@ -14,6 +14,11 @@ class Market
    end
 
    def vendors_that_sell(item)
-     @vendors.select{|vendor| vendor.inventory.keys.any?(item)}
+     @vendors.select {|vendor| vendor.inventory.keys.any?(item)}
+   end
+
+   def total_inventory
+     total_inventory = {}
+     @vendors.each {|vendor| vendor.inventory.each {|item, quantity| }}
    end
 end
