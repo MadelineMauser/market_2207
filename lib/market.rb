@@ -18,7 +18,14 @@ class Market
    end
 
    def total_inventory
-     total_inventory = {}
-     @vendors.each {|vendor| vendor.inventory.each {|item, quantity| }}
+     total_inventory = Hash.new()
+     @vendors.each do |vendor|
+       vendor.inventory.each do |item, quantity|
+         total_inventory[item] = {quantity: 0, vendors: []} if total_inventory[item] == nil
+         total_inventory[item][:quantity] += quantity
+         total_inventory[item][:vendors] << vendor
+       end
+     end
+     total_inventory
    end
 end
