@@ -42,6 +42,7 @@ RSpec.describe Market do
   end
   context 'Added three vendors to market' do
     before :all do
+      @market = Market.new("South Pearl Street Farmers Market")
       @market.add_vendor(@vendor1)
       @market.add_vendor(@vendor2)
       @market.add_vendor(@vendor3)
